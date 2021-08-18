@@ -1,14 +1,26 @@
 {
   "name": "static-site",
   "version": "1.0.0",
-  "description": "",
+  "description": "Work in progress.",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^6.3.1"
-  }
+    "fs": "0.0.1-security",
+    "inquirer": "^6.5.2",
+    "node": "^16.6.1",
+    "nodemon": "^2.0.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lordozland/ReadThis_ME.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lordozland/ReadThis_ME/issues"
+  },
+  "homepage": "https://github.com/lordozland/ReadThis_ME#readme"
 }
