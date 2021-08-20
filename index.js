@@ -4,15 +4,9 @@ const fs = require('fs');
 const inquirer = require("inquirer");
 const markinus = require('./utils/generateMarkdown')
 
-// inquirer.prompt([
-//     {
-//         name: 'greeting',
-//         message: 'What would you like to say?',
-//         type: 'input'
-//        }])
-//   .then(function(answer){
-//     console.log(answer);
-//   });
+
+
+
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -54,15 +48,40 @@ const questions = [
 
 ];
 
-fs.writeFile("README.md", "Words") 
+// console.log(answer)
+
+
 
 // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
+
+
+
+
+
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(questions);
+    inquirer.prompt(questions)
+    .then(function(answer){
+    const data = JSON.stringify(answer);
+    fs.writeFile("./test/README.md", data, (err) => {
+        if (err)
+          console.log(err);
+        else {
+          console.log("File written successfully\n");
+          console.log("The written has the following contents:");
+          console.log(fs.readFileSync("./test/README.md"));
+        }
+      });
+  });
 }
+  
+
 
 // Function call to initialize app
 init();
+
+
+
+
+
