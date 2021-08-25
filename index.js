@@ -12,7 +12,7 @@ const markinus = require('./utils/generateMarkdown')
 const questions = [
     {
         type: 'input',
-        name: 'GitHub Account',
+        name: 'GitHubAccount',
         message: 'Enter your GitHub Username',
     },
     {
@@ -60,20 +60,40 @@ const questions = [
 
 
 // TODO: Create a function to initialize app
-function init() {
+// function init() {
+//     inquirer.prompt(questions)
+//     .then(function(answer){
+//     const data = JSON.stringify(answer);
+//     fs.writeFile("./test/README.md", data, (err) => {
+//         if (err)
+//           console.log(err);
+//         else {
+//           console.log("File written successfully\n");
+//           console.log("The written has the following contents:");
+//           console.log(fs.readFileSync("./test/README.md"));
+//         }
+//       });
+//   });
+// }
+
+// .then((data) => {
+//     const filename = `${data.name.toLowerCase().split(' ').join('')}.json`;
+
+//     fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
+//       err ? console.log(err) : console.log('Success!')
+//     );
+//   });
+
+  function init() {
     inquirer.prompt(questions)
-    .then(function(answer){
-    const data = JSON.stringify(answer);
-    fs.writeFile("./test/README.md", data, (err) => {
-        if (err)
-          console.log(err);
-        else {
-          console.log("File written successfully\n");
-          console.log("The written has the following contents:");
-          console.log(fs.readFileSync("./test/README.md"));
-        }
+    .then((data) => {
+        const filename = `${data.name}.json`;
+    
+        fs.writeFile("./test/README.md", JSON.stringify(data, null, '\t'), (err) =>
+          err ? console.log(err) : console.log('Success!')
+        );
       });
-  });
+    
 }
   
 

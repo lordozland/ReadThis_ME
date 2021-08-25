@@ -16,11 +16,10 @@ function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  // return `# ${data.title}`;
-  // writeFile('message.txt', data, (err) => {
-  //   if (err) throw err;
-  //   console.log('The file has been saved!');
-  // });
+  return `
+  # ${data.GitHubAccount}\n
+  `;
+
 }
 
 
