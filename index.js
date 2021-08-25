@@ -87,7 +87,7 @@ const questions = [
   function init() {
     inquirer.prompt(questions)
     .then((data) => {
-        const filename = `${data.name}.json`;
+        const filename = `${data.GitHubAccount}.json`;
     
         fs.writeFile("./test/README.md", JSON.stringify(data, null, '\t'), (err) =>
           err ? console.log(err) : console.log('Success!')
